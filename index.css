@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.6em;
+    line-height: 1.62em;
+    background-color: #e6e6e6;
+    margin-bottom: 3em;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#infoAlerts {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header {
+    background: url("stock photos/header-9-crop.jpg") center center;
+    display: block;
+    width: 100%;
+    height: 16em;
+    padding-top: 42px;
+    border-radius: 4px;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 45px;
+}
+
+.model {
+    animation: fadein 0.5s;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    overflow: auto;
+    position: fixed;
+    margin: 0;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#close {
+    float: right;
+    color: #737373;
+    font-size: 1.5em;
+}
+
+#close:hover {
+    color: #171717;
+}
+
+select {
+    text-transform: capitalize;
+}
+
+#inputErrors {
+    margin-top: 2em;
+}
+
+
+/*=============================================
+                    dialog            
+=============================================*/
+
+.dialog {
+    display: none;
+    animation: fadein 0.5s;
+    position: absolute;
+    margin-bottom: 3em;
+    top: 5em;
+    background-color: #fff;
+    z-index: 100;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 1em;
+    border: solid 1px #e6e6e6;
+    color: #2d2d2d;
+    box-shadow: 0 0 0px 1px #f2f2f2;
+}
+
+#clear {
+    display: block;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 6px;
+}
+
+#printCategorys {
+    margin: 20px;
+}
+
+#printCategorys #name {
+    background-color: #444;
+    color: #fff;
+}
+
+#printCategorys #picture {
+    width: 100%;
+    height: 220px;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade .in {
+    opacity: 1;
+}
+
+.fade .out {
+    opacity: 0;
+}
+
+#edit {
+    display: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px dotted gray;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #7f839d;
+}
+
+#visualImage {
+    width: 100%;
+    padding: 1em;
+    border: 1px dotted gray;
+    border-radius: 5px;
+}
+
+
+/*=============================================
+          display selected recipe to user            
+=============================================*/
+
+.parentDiv {
+    border: solid 1px #e6e6e6;
+    background-color: #fff;
+    cursor: pointer;
+    color: #2d2d2d;
+    box-shadow: 0 0 2px 1px #f2f2f2;
+    font-family: "Source Sans Pro", Arial;
+    padding: .5em;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+#name {
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.4em;
+}
+
+#picture {
+    width: 100%;
+}
+
+#ingredients {
+    font-size: 14px;
+    color: #7f7f7f;
+    clear: both;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+#ingredients ol li {
+    line-height: 1.5em;
+}
+
+#instructions {
+    font-size: 14px;
+    color: #7f7f7f;
+    clear: both;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+#notes {
+    font-size: 14px;
+    color: #7f7f7f;
+    clear: both;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+#deleteRecipe,
+#editRecipe {
+    margin: 20px 5px 8px 0px;
+}
+
+.footer {
+    background-color: #262600;
+    position: relative;
+    bottom: 0px;
+    margin-top: 15%;
+    border-top: 5px solid #fff;
+    border-left: 4px solid #fff;
+    border-right: 4px solid #fff;
+    padding: 2em;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}

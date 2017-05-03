@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kosher Recipes</title>
+    <link rel="icon" href="img/chief-icon-8.png">
+    <script src="https://use.fontawesome.com/86e8323539.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="infoAlerts" class="alert alert-success alert-dismissible fade" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="header col-xs-12">
+                <h1 class="text-center">Kosher Cookbook</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="model" style="background-color: rgba(153,153,153,0.8);"></div>
+    <!-- model -->
+
+    <div class="container">
+        <!-- search options -->
+        <div class="row">
+            <div class="col-xs-10 col-sm-12">
+                <label for="recipeNames">Search by Recipe Name:</label>
+                <select id="recipeNames" class="form-control">
+                <option></option>
+            </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-sm-12">
+                <label for="recipeCategorys">Search by Recipe Category:</label>
+                <select id="recipeCategorys" class="form-control">
+                <option>-- Categories --</option>
+            </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-sm-12" style="margin: 15px 0;">
+                <div><label for="addRecipe">Add your Recipe to the Cookbook: </label></div>
+                <button id="addRecipe" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Recipe</button>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- add recipe dialog -->
+        <div class="row">
+            <div id="dialog" class="dialog col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <i id="close" class="fa fa-times" aria-hidden="true"></i>
+                <div id="inputErrors" class="alert alert-danger  alert-dismissible fade in" role="alert"></div>
+                <form id="addRecipeForm" class="" runat="server">
+                    <button id="clear" type="button" class="btn btn-default">Clear form</button>
+                    <div class="form-group">
+                        <label style="padding-top: 1.5em;">Recipe Name</label>
+                        <input id="nameInput" class="form-control" placeholder="Recipe Title" />
+                    </div>
+                    <div class="form-group">
+                        <label>Categorize this recipe</label>
+                        <select id="categoryInput" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label id="ingredientsLabel">Ingredients</label>
+                        <table style="width: 100%;">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                        <label>Instructions</label>
+                        <textarea id="instructionsInput" rows="4" class="form-control" placeholder="Preparation and Instructions"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes &amp; Tips (optional)</label>
+                        <textarea id="notesInput" rows="4" class="form-control" placeholder="What would you tell a friend to ensure they make it perfectly?" /></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone number (password)</label>
+                        <input id="phoneInput" class="form-control" type="number" placeholder="This will be used as your password to edit your recipe (numbers only)" />
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block;">Upload A Photo</label>
+                        <label for="pictureInput" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                    <i class="fa fa-camera" aria-hidden="true"></i> choose a photo
+                </label>
+                        <input type="file" name="picture" id="pictureInput" class="displayImg">
+                        <img id="visualImage" src="#" alt="your image" />
+                    </div>
+                    <div class="buttons">
+                        <button id="cancel" type="button" class="btn btn-default">Cancel</button>
+                        <button id="ok" type="button" class="btn btn-success">OK</button>
+                        <button id="edit" type="button" class="btn btn-success">Update Recipe</button>
+                    </div>
+                </form>
+            </div>
+            <!-- end dialog -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container">
+        <!-- display recipe to user -->
+        <div class="row">
+            <div id="printRecipe"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- footer -->
+        <div class="row ">
+            <div class="footer col-xs-12">
+                <p class="text-center"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 M.S.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/jsmessageBox/messageBox.js"></script>
+    <script src="recipes.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>
