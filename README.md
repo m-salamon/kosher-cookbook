@@ -1,3 +1,3 @@
 # kosher-cookbook
 
-A Recipes Cookbook where users can interact socialy including uploading public recipes leaveing comments and feedback.
+A Recipes Cookbook where users can interact socially including uploading public recipes leaving comments and feedback.
